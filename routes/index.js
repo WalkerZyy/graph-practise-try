@@ -1,5 +1,3 @@
-// const express = require('express');
-// const router = express.Router();
 import auth from './auth/auth';
 const graphqlHTTP = require('express-graphql');
 
