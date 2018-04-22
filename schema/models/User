@@ -1,0 +1,31 @@
+/*
+role || 取值 admin  normal(guest) 吧
+status 0 --- 正常 1 --- 弃用(deprecated)（比如有些临时开放的东西把它关闭了）
+ */
+
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define('User', {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      field: 'id',
+    },
+    name: DataTypes.TEXT,
+    pwd: DataTypes.TEXT,
+    role: {
+      type: DataTypes.TEXT,
+      defaultValue: 'normal',
+    },
+    status: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+  });
+
+  User.associate = function (models) {
+    models.User.hasMany(models.Plan, { foreignKey: 'user_id', scouceKey: 'id' });
+  };
+
+  return User;
+};
