@@ -30,12 +30,12 @@ function startApp(port, hostname) {
   app.listen(port, hostname, () => {
     console.log(`Server is listening on port ${port} ${hostname}`);
   });
-}startApp(conf.port, conf.hostname);
+}
 
 db.sequelize.sync()
   .then(() => {
     init();
-    startApp(conf.port);
+    startApp(conf.port, conf.hostname);
   })
   .catch((e) => {
     throw new Error(e);
