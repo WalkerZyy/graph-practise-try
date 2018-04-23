@@ -23,6 +23,6 @@ readme.md为什么点md呢，md就是马蛋的缩写呀233(=・ω・=)
 ##############################################################
 弄了半天，后来才发现还有sequelize-graphql ，管它了，以后再看了，核对类型真麻烦
 
-localhost:8088/graphql 进入graphiql的界面，哦，对了，进不去，用了验证，可以先Postman调用/graphql/login获取一个toekn。再挂到连接上进去
+localhost:8090/graphql 进入graphiql的界面，哦，对了，进不去，用了验证，可以先Postman调用/graphql/login获取一个toekn。再挂到连接上进去
 
 初始化用户  admin   密码12345678
